@@ -156,10 +156,10 @@ This separation improves:
 ## Shared Logic
 
 ### types.ts
-Defines reusable TypeScript interfaces.
+Keeps all shared data shapes in one place so components stay consistent and you don’t have to repeat type definitions everywhere.
 
 ### utils.ts
-Contains helper functions like class merging (`cn`).
+Holds small helper functions that make the code cleaner and easier to manage, like combining Tailwind classes without messy repetition.
 
 ---
 
