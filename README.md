@@ -7,7 +7,8 @@ It includes a dark/light theme toggle, scroll animations, and a project showcase
 
 ## Screenshot
 
-<img width="1918" height="909" alt="homepage" src="https://github.com/user-attachments/assets/99536a16-710d-478c-b450-977182b7efb4" />
+<img width="1918" height="909" alt="homepage" src="https://github.com/user-attachments/assets/3bc902d5-0c87-4056-a25c-0be59355470c" />
+
 
 ---
 
@@ -29,9 +30,11 @@ https://nodejs.org/
 
 ---
 
-## 1. Install dependencies
+## 1. If You Downloaded This as a ZIP File
 
-If you downloaded this project as a ZIP file or cloned it:
+1. Extract the ZIP file to a folder  
+2. Open the folder in VS Code or terminal  
+3. Run the following command:
 
 ```bash
 npm install
@@ -39,13 +42,13 @@ npm install
 
 ---
 
-## 2. Run development server
+## 2. Run Development Server
 
 ```bash
 npm run dev
 ```
 
-Open:
+Open in your browser:
 
 ```
 http://localhost:3000
@@ -53,7 +56,7 @@ http://localhost:3000
 
 ---
 
-## 3. Build for production
+## 3. Build for Production
 
 ```bash
 npm run build
@@ -174,8 +177,9 @@ Holds small helper functions that keep the code clean, like merging Tailwind cla
 ## Summary
 
 The architecture follows a clear separation of:
-- Layout (global structure)
-- Sections (page content)
-- UI (reusable components)
+
+- Layout (global structure)  
+- Sections (page content)  
+- UI (reusable components)  
 
 This makes the project modular, scalable, and easy to maintain.
