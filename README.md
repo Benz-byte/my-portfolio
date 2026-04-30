@@ -11,27 +11,7 @@ A personal portfolio site built with **Next.js 14**, **TypeScript**, and **Tailw
 | **GitHub** | https://github.com/Benz-byte/my-portfolio.git |
 | **Live site** | https://my-portfolio-sepia-rho-53.vercel.app/ |
 
-### How to add these (do this after setup):
 
-**GitHub repo:**
-1. Go to [github.com/new](https://github.com/new)
-2. Name it `my-portfolio`, set it to **Public**
-3. Don't initialise with a README (you already have one)
-4. Copy the commands GitHub shows you under *"push an existing repository"* and run them in your project folder:
-   ```bash
-   git init
-   git add .
-   git commit -m "initial commit"
-   git remote add origin https://github.com/your-username/my-portfolio.git
-   git push -u origin main
-   ```
-5. Paste the repo URL into the table above
-
-**Vercel URL:**
-1. Go to [vercel.com/new](https://vercel.com/new) and sign in with GitHub
-2. Import your `my-portfolio` repo
-3. Click **Deploy** — no config needed, Vercel auto-detects Next.js
-4. Copy the `.vercel.app` URL it gives you and paste it into the table above
 
 ---
 
