@@ -7,7 +7,8 @@ It includes a dark/light theme toggle, scroll animations, and a project showcase
 
 ## Screenshot
 
-![Portfolio Homepage](./public/homepage.png)
+<img width="1918" height="909" alt="homepage" src="https://github.com/user-attachments/assets/99536a16-710d-478c-b450-977182b7efb4" />
+
 
 ---
 
