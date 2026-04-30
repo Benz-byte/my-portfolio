@@ -1,14 +1,13 @@
 # My Portfolio
 
 A personal portfolio website built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**.  
-It features a dark/light theme toggle, scroll animations, and a project showcase.
+It includes a dark/light theme toggle, scroll animations, and a project showcase.
 
 ---
 
 ## Screenshot
 
-<img width="1918" height="909" alt="homepage" src="https://github.com/user-attachments/assets/5da40a00-4524-4c83-998c-141dd74c5af7" />
-
+![Portfolio Homepage](./public/homepage.png)
 
 ---
 
@@ -22,30 +21,30 @@ https://my-portfolio-sepia-rho-53.vercel.app/
 
 ---
 
-## Installation Guide
+# Setup Guide
 
-### 1. Clone the repository
+## 1. Clone the repository
 
 ```bash
 git clone https://github.com/Benz-byte/my-portfolio.git
 cd my-portfolio
 ```
 
-### 2. Install dependencies
+## 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Run the development server
+## 3. Run development server
 
 ```bash
 npm run dev
 ```
 
-Open `http://localhost:3000` in your browser.
+Open: http://localhost:3000
 
-### 4. Build for production
+## 4. Build for production
 
 ```bash
 npm run build
@@ -54,139 +53,120 @@ npm start
 
 ---
 
-## Customization
+# Customization Guide
 
-Edit the following files to personalize the portfolio:
+You can edit the portfolio content in the following files:
 
 - `Hero.tsx` → Name and introduction  
 - `About.tsx` → Bio and skills  
-- `Projects.tsx` → Project details  
+- `Projects.tsx` → Project list  
 - `Contact.tsx` → Contact form logic  
-- `Header.tsx` → Navigation  
+- `Header.tsx` → Navigation items  
 - `Footer.tsx` → Social links  
 
-To replace images:
-- Update files inside the `public/` folder
-
-To add your resume:
-- Place `resume.pdf` inside the `public/` folder
+### Assets
+- Replace images inside the `public/` folder  
+- Add resume as `resume.pdf` inside `public/`
 
 ---
 
-## Project Structure
+# Component Design Decisions
 
-```text
-src/
-├── app/
-│   ├── globals.css           # Design tokens, base styles, animations
-│   ├── layout.tsx            # Root layout — Header, Footer, RevealObserver
-│   └── page.tsx              # Home page — composes all sections
-├── components/
-│   ├── layout/
-│   │   ├── Header.tsx        # Fixed nav with mobile menu + resume link
-│   │   ├── Footer.tsx        # Social links
-│   │   └── RevealObserver.tsx # Scroll-triggered reveal wiring
-│   ├── sections/
-│   │   ├── Hero.tsx          # Full-screen intro
-│   │   ├── About.tsx         # Bio + skills + headshot
-│   │   ├── Projects.tsx      # Project card grid
-│   │   └── Contact.tsx       # Contact form
-│   └── ui/
-│       ├── Button.tsx        # Multi-variant button primitive
-│       ├── Card.tsx          # Project card
-│       └── ThemeToggle.tsx   # Dark/light toggle
-├── lib/
-│   ├── types.ts              # Shared TypeScript interfaces
-│   └── utils.ts              # cn() class-merging helper
-public/
-├── resume.pdf
-├── profile.jpg
-└── project-1.jpg … project-4.jpg
-```
+This section explains how the system is structured and why it is designed this way.
 
 ---
 
-# Component Architecture
+## Directory Structure Decision
 
-This document explains the structural decisions behind the portfolio's component design.
-
----
-
-## Directory Layout
-
-Components are split into three layers with distinct responsibilities:
+The project is divided into three main layers:
 
 ```text
 components/
-├── layout/    # App chrome — always rendered, wrap everything
-├── sections/  # Page content — one file per scroll section
-└── ui/        # Primitives — stateless, reusable building blocks
+├── layout/    → Global structure (Header, Footer, Observer)
+├── sections/  → Page content sections
+└── ui/        → Reusable UI components
 ```
+
+### Reasoning:
+This separation improves:
+- Code organization
+- Reusability
+- Maintainability
+- Scalability for future features
 
 ---
 
 ## Layout Components
 
-### `Header.tsx`
+### Header.tsx
+- Handles navigation
+- Manages mobile menu state
+- Changes style on scroll
 
-Handles navigation, mobile menu toggle, and scroll-based header styling.
+### Footer.tsx
+- Displays social links
+- Static and server-rendered
 
-### `Footer.tsx`
-
-Displays social links and footer content.
-
-### `RevealObserver.tsx`
-
-Controls scroll-triggered reveal animations using IntersectionObserver.
+### RevealObserver.tsx
+- Uses IntersectionObserver
+- Triggers scroll animations
+- Keeps animation logic separate from UI
 
 ---
 
 ## Section Components
 
-### `Hero.tsx`
+### Hero.tsx
+- Landing introduction
+- Fully server-rendered
+- Uses CSS animations only
 
-Displays the main introduction section.
+### About.tsx
+- Displays personal bio and skills
+- Uses static data rendering
 
-### `About.tsx`
+### Projects.tsx
+- Renders project list dynamically
+- Uses reusable Card component
 
-Shows personal information, skills, and profile image.
-
-### `Projects.tsx`
-
-Displays project cards in a grid layout.
-
-### `Contact.tsx`
-
-Handles the contact form and user input.
+### Contact.tsx
+- Client-side form handling
+- Handles input state and submission
 
 ---
 
 ## UI Components
 
-### `Button.tsx`
+### Button.tsx
+- Reusable button system
+- Supports variants and sizes
+- Uses class merging utility
 
-Reusable button component with different styles.
+### Card.tsx
+- Displays project information
+- Conditionally renders links
 
-### `Card.tsx`
-
-Reusable card component for displaying project details.
-
-### `ThemeToggle.tsx`
-
-Handles dark/light theme switching.
-
----
-
-## Shared Types (`src/lib/types.ts`)
-
-Contains shared interfaces used across components.
+### ThemeToggle.tsx
+- Controls dark/light mode
+- Stores preference in localStorage
 
 ---
 
-## Utilities (`src/lib/utils.ts`)
+## Shared Logic
 
-Contains helper functions such as class merging utilities.
+### types.ts
+Defines reusable TypeScript interfaces.
+
+### utils.ts
+Contains helper functions like class merging (`cn`).
 
 ---
 
-This project is organized for clean code, reusability, and easy maintenance.
+## Summary
+
+The architecture follows a clear separation of:
+- Layout (global structure)
+- Sections (page content)
+- UI (reusable components)
+
+This makes the project modular, scalable, and easy to maintain.
