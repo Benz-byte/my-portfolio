@@ -30,11 +30,24 @@ https://nodejs.org/
 
 ---
 
-## 1. If You Downloaded This as a ZIP File
+## 1. Get the Project
 
-1. Extract the ZIP file to a folder  
-2. Open the folder in VS Code or terminal  
-3. Run the following command:
+### Option A: Clone using Git (recommended)
+
+```bash
+git clone https://github.com/Benz-byte/my-portfolio.git
+cd my-portfolio
+```
+
+### Option B: Download ZIP file
+
+- Download the repository as ZIP from GitHub  
+- Extract it to a folder  
+- Open the folder in VS Code or terminal  
+
+---
+
+## 2. Install dependencies
 
 ```bash
 npm install
@@ -42,13 +55,13 @@ npm install
 
 ---
 
-## 2. Run Development Server
+## 3. Run development server
 
 ```bash
 npm run dev
 ```
 
-Open in your browser:
+Open:
 
 ```
 http://localhost:3000
@@ -56,7 +69,7 @@ http://localhost:3000
 
 ---
 
-## 3. Build for Production
+## 4. Build for production
 
 ```bash
 npm run build
