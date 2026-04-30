@@ -1,36 +1,160 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Portfolio
+
+A personal portfolio site built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**. Features a dark/light theme toggle, scroll-triggered reveal animations, and a project showcase grid.
+
+---
+
+## 🔗 Links
+
+| | |
+|---|---|
+| **GitHub** | <!-- TODO: paste your repo URL here, e.g. https://github.com/your-username/my-portfolio --> |
+| **Live site** | <!-- TODO: paste your Vercel URL here, e.g. https://my-portfolio-tau.vercel.app --> |
+
+### How to add these (do this after setup):
+
+**GitHub repo:**
+1. Go to [github.com/new](https://github.com/new)
+2. Name it `my-portfolio`, set it to **Public**
+3. Don't initialise with a README (you already have one)
+4. Copy the commands GitHub shows you under *"push an existing repository"* and run them in your project folder:
+   ```bash
+   git init
+   git add .
+   git commit -m "initial commit"
+   git remote add origin https://github.com/your-username/my-portfolio.git
+   git push -u origin main
+   ```
+5. Paste the repo URL into the table above
+
+**Vercel URL:**
+1. Go to [vercel.com/new](https://vercel.com/new) and sign in with GitHub
+2. Import your `my-portfolio` repo
+3. Click **Deploy** — no config needed, Vercel auto-detects Next.js
+4. Copy the `.vercel.app` URL it gives you and paste it into the table above
+
+---
+
+## 📸 Screenshot
+
+<!-- TODO: take a screenshot of your homepage and add it here -->
+<!-- Steps:
+  1. Run `npm run dev` and open http://localhost:3000
+  2. Take a screenshot (Mac: Cmd+Shift+4, Windows: Win+Shift+S)
+  3. Save it as `screenshot.png` inside the public/ folder
+  4. Replace this comment block with: ![Portfolio homepage](public/screenshot.png)
+-->
+
+---
+
+## Prerequisites
+
+- **Node.js** 18.17 or later
+- **npm**, **yarn**, **pnpm**, or **bun**
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Customizing Your Portfolio
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Personal info
+Edit the placeholder text directly in the section components inside `src/components/sections/`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| File | What to update |
+|---|---|
+| `Hero.tsx` | Your name, tagline, and current company |
+| `About.tsx` | Bio paragraphs and skills list |
+| `Projects.tsx` | `PROJECTS` array — titles, descriptions, URLs, tech stack |
+| `Contact.tsx` | Form submission logic (currently simulated) |
+| `layout/Footer.tsx` | Social links and email address |
+| `layout/Header.tsx` | Your name/logo and nav labels |
 
-## Deploy on Vercel
+### Resume
+The Resume button links to `/your-name-resume.pdf`. To activate it:
+1. Export your resume as a PDF
+2. Rename it `your-name-resume.pdf`
+3. Drop it into the `public/` folder
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Clicking the button on desktop opens the PDF in a new tab and triggers a download. On mobile it appears as a nav link.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Replacing images
+Drop replacement images into `public/` using the same filenames, or update the paths in the `PROJECTS` array and `About.tsx`:
+
+- `public/profile.jpg` — your headshot (recommended ratio: 3:4)
+- `public/project-1.jpg` through `project-4.jpg` — project screenshots (recommended ratio: 16:10)
+
+### Connecting the contact form
+`Contact.tsx` currently simulates a network request. To send real emails, replace the `await new Promise(...)` line with a fetch to a service like [Resend](https://resend.com) or [Formspree](https://formspree.io).
+
+---
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── globals.css           # Design tokens, base styles, animations
+│   ├── layout.tsx            # Root layout — Header, Footer, RevealObserver
+│   └── page.tsx              # Home page — composes all sections
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx        # Fixed nav with mobile menu + resume link
+│   │   ├── Footer.tsx        # Social links
+│   │   └── RevealObserver.tsx # Scroll-triggered reveal wiring
+│   ├── sections/
+│   │   ├── Hero.tsx          # Full-screen intro
+│   │   ├── About.tsx         # Bio + skills + headshot
+│   │   ├── Projects.tsx      # Project card grid
+│   │   └── Contact.tsx       # Contact form
+│   └── ui/
+│       ├── Button.tsx        # Multi-variant button primitive
+│       ├── Card.tsx          # Project card
+│       └── ThemeToggle.tsx   # Dark/light toggle
+├── lib/
+│   ├── types.ts              # Shared TypeScript interfaces
+│   └── utils.ts              # cn() class-merging helper
+public/
+├── your-name-resume.pdf      # ← drop your resume here
+├── profile.jpg
+└── project-1.jpg … project-4.jpg
+```
+
+---
+
+## Component Architecture
+
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for a full breakdown of component structure and design decisions.
+
+---
+
+## Deployment
+
+1. Push your code to GitHub
+2. Import the repo at [vercel.com/new](https://vercel.com/new)
+3. Click **Deploy** — zero config required for Next.js
+
+For other platforms, run `npm run build` and serve the `.next/` output, or add `output: 'export'` to `next.config.mjs` for a fully static build.
