@@ -21,7 +21,7 @@ export function About() {
           {}
           <div className="reveal space-y-4 text-muted-foreground md:col-span-3">
             <p>
-  Hi, I'm Ben, a Full Stack Developer based in Iloilo City, Philippines.
+  Hi, I&apos;m Ben, a Full Stack Developer based in Iloilo City, Philippines.
   I enjoy building things for the web, from interactive web apps to APIs
   and everything in between. For me, development is about creating
   products that not only look good but also feel smooth, fast, and easy
@@ -31,14 +31,14 @@ export function About() {
 <p>
   I graduated with honors from{" "}
   <span className="text-foreground">Central Philippine University</span>{" "}
-  with a BS in Computer Science in 2027. Since then, I've been working
+  with a BS in Computer Science in 2027. Since then, I&apos;ve been working
   across both frontend and backend development, building dashboards,
   e-commerce platforms, and APIs using tools like React, Next.js,
-  Node.js, and PostgreSQL. I'm always looking for ways to improve my
+  Node.js, and PostgreSQL. I&apos;m always looking for ways to improve my
   skills and build better digital experiences.
 </p>
             <p>
-              Here are a few technologies I've been working with recently:
+              Here are a few technologies I&apos;ve been working with recently:
             </p>
             <ul className="mt-4 grid grid-cols-2 gap-y-2 font-mono text-sm">
               {SKILLS.map((s) => (
