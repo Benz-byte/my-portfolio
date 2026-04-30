@@ -9,7 +9,6 @@ It includes a dark/light theme toggle, scroll animations, and a project showcase
 
 <img width="1918" height="909" alt="homepage" src="https://github.com/user-attachments/assets/99536a16-710d-478c-b450-977182b7efb4" />
 
-
 ---
 
 ## Links
@@ -24,53 +23,37 @@ https://my-portfolio-sepia-rho-53.vercel.app/
 
 # Setup Guide
 
-## ⚠️ If You Downloaded This as a ZIP File
+## Requirements
+Make sure you have **Node.js 18.17 or later** installed:  
+https://nodejs.org/
 
-### Prerequisite
-Make sure **Node.js 18.17 or later** is installed on your machine.  
-Download it here: https://nodejs.org/
+---
 
-### Then run these commands inside the extracted project folder:
+## 1. Install dependencies
 
-**1. Delete old dependencies**
-```bash
-rm -rf node_modules package-lock.json
-```
-
-**2. Reinstall everything cleanly**
-```bash
-npm install
-```
-
-**3. Install the correct Tailwind v4 packages**
-```bash
-npm install tailwindcss @tailwindcss/postcss postcss
-```
-
-> After these steps, continue with Step 3 (Run development server) below.
-
-## 1. Clone the repository
-
-```bash
-git clone https://github.com/Benz-byte/my-portfolio.git
-cd my-portfolio
-```
-
-## 2. Install dependencies
+If you downloaded this project as a ZIP file or cloned it:
 
 ```bash
 npm install
 ```
 
-## 3. Run development server
+---
+
+## 2. Run development server
 
 ```bash
 npm run dev
 ```
 
-Open: http://localhost:3000
+Open:
 
-## 4. Build for production
+```
+http://localhost:3000
+```
+
+---
+
+## 3. Build for production
 
 ```bash
 npm run build
@@ -92,7 +75,7 @@ You can edit the portfolio content in the following files:
 
 ### Assets
 - Replace images inside the `public/` folder  
-- Add resume as `resume.pdf` inside `public/`
+- Add your resume as `resume.pdf` inside `public/`
 
 ---
 
@@ -108,83 +91,83 @@ The project is divided into three main layers:
 
 ```text
 components/
-├── layout/    → Global structure (Header, Footer, Observer)
-├── sections/  → Page content sections
-└── ui/        → Reusable UI components
+├── layout/   → Global structure (Header, Footer, Observer)
+├── sections/ → Page content sections
+└── ui/       → Reusable UI components
 ```
 
 ### Reasoning:
 This separation improves:
-- Code organization
-- Reusability
-- Maintainability
-- Scalability for future features
+- Code organization  
+- Reusability  
+- Maintainability  
+- Scalability for future features  
 
 ---
 
 ## Layout Components
 
 ### Header.tsx
-- Handles navigation
-- Manages mobile menu state
-- Changes style on scroll
+- Handles navigation  
+- Manages mobile menu state  
+- Changes style on scroll  
 
 ### Footer.tsx
-- Displays social links
-- Static and server-rendered
+- Displays social links  
+- Static and server-rendered  
 
 ### RevealObserver.tsx
-- Uses IntersectionObserver
-- Triggers scroll animations
-- Keeps animation logic separate from UI
+- Uses IntersectionObserver  
+- Triggers scroll animations  
+- Keeps animation logic separate from UI  
 
 ---
 
 ## Section Components
 
 ### Hero.tsx
-- Landing introduction
-- Fully server-rendered
-- Uses CSS animations only
+- Landing introduction  
+- Fully server-rendered  
+- Uses CSS animations only  
 
 ### About.tsx
-- Displays personal bio and skills
-- Uses static data rendering
+- Displays personal bio and skills  
+- Uses static data rendering  
 
 ### Projects.tsx
-- Renders project list dynamically
-- Uses reusable Card component
+- Renders project list dynamically  
+- Uses reusable Card component  
 
 ### Contact.tsx
-- Client-side form handling
-- Handles input state and submission
+- Client-side form handling  
+- Handles input state and submission  
 
 ---
 
 ## UI Components
 
 ### Button.tsx
-- Reusable button system
-- Supports variants and sizes
-- Uses class merging utility
+- Reusable button system  
+- Supports variants and sizes  
+- Uses class merging utility  
 
 ### Card.tsx
-- Displays project information
-- Conditionally renders links
+- Displays project information  
+- Conditionally renders links  
 
 ### ThemeToggle.tsx
-- Controls dark/light mode
-- Stores preference in localStorage
+- Controls dark/light mode  
+- Stores preference in localStorage  
 
 ---
 
 ## Shared Logic
 
 ### types.ts
-Keeps all shared data shapes in one place so components stay consistent and you don’t have to repeat type definitions everywhere.
+Keeps all shared data shapes in one place so components stay consistent and avoid repeated type definitions.
 
 ### utils.ts
-Holds small helper functions that make the code cleaner and easier to manage, like combining Tailwind classes without messy repetition.
+Holds small helper functions that keep the code clean, like merging Tailwind classes without repetition.
 
 ---
 
