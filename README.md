@@ -24,6 +24,31 @@ https://my-portfolio-sepia-rho-53.vercel.app/
 
 # Setup Guide
 
+## ⚠️ If You Downloaded This as a ZIP File
+
+### Prerequisite
+Make sure **Node.js 18.17 or later** is installed on your machine.  
+Download it here: https://nodejs.org/
+
+### Then run these commands inside the extracted project folder:
+
+**1. Delete old dependencies**
+```bash
+rm -rf node_modules package-lock.json
+```
+
+**2. Reinstall everything cleanly**
+```bash
+npm install
+```
+
+**3. Install the correct Tailwind v4 packages**
+```bash
+npm install tailwindcss @tailwindcss/postcss postcss
+```
+
+> After these steps, continue with Step 3 (Run development server) below.
+
 ## 1. Clone the repository
 
 ```bash
